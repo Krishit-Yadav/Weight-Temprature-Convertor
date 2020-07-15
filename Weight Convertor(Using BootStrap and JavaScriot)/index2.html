@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <style>
+      body{
+        margin-top:70px;
+        background:#0e013b;
+        color:#eaf2f8;
+      }
+  </style>
+  <title>Temprature Convertor</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <h1 class="display-4 text-center mb-3">Temprature Convertor</h1>
+            <form>
+              <div class="form-group">
+                <input id="celciusInput" type="number" class="form-control form-control-lg" placeholder="Enter Kilograms">
+              </div>
+            </form>
+            <div id="output">
+              <div class="card card-danger mb-3">
+                <div class="card-block">
+                  <h4>Kelvin:</h4>
+                  <div id="kelvinOutput"></div>
+                </div>
+              </div>
+    
+              <div class="card card-warning mb-3">
+                <div class="card-block">
+                  <h4>Fahrenheit:</h4>
+                  <div id="fahrenheitOutput"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("output").style.visibility = "hidden";
+    document.getElementById("celciusInput").addEventListener("input", function(e) {
+    document.getElementById("output").style.visibility = "visible";
+    let celcius = e.target.value;
+    document.getElementById("kelvinOutput").innerHTML = (celcius*1) + 273.15;
+    document.getElementById("fahrenheitOutput").innerHTML = (celcius*9)/5 +32;
+});
+</script>
+</body>
+</html>
